@@ -13,6 +13,9 @@ namespace engine {
             window(int w, int h, std::string name);
             ~window();
 
+            window(const window &) = delete;
+            window &operator=(const window &) = delete;
+
             bool shouldClose() { return glfwWindowShouldClose(window1); };
 
             GLFWwindow *window1;
