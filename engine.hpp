@@ -18,13 +18,14 @@ namespace engine {
 
             bool shouldClose() { return glfwWindowShouldClose(window1); };
 
-            GLFWwindow *window1;
+            void createWindowSurface(VkInstance instance, VkSurfaceKHR *surface);
 
         private:
 
             void initWindow();
             const int width;
             const int height;
+            GLFWwindow *window1;
 
             std::string windowName;
 
