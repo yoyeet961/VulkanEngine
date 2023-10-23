@@ -13,6 +13,8 @@ namespace engine {
             window(int w, int h, std::string name);
             ~window();
 
+            bool shouldClose() { return glfwWindowShouldClose(window1); };
+
             GLFWwindow *window1;
 
         private:

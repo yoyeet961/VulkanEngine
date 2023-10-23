@@ -9,7 +9,7 @@ namespace engine {
         static constexpr int WIDTH = 800;
         static constexpr int HEIGHT = 600;
 
-        void run() {};
+        void run();
 
         private:
             window window2{WIDTH, HEIGHT, "Vulkan Engine"};
