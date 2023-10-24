@@ -2,6 +2,7 @@
 
 #include "engine.hpp"
 #include "engine_pipeline.hpp"
+#include "engine_device.hpp"
 
 namespace engine {
     class app {
@@ -14,6 +15,7 @@ namespace engine {
 
         private:
             window window2{WIDTH, HEIGHT, "Vulkan Engine"};
-            enginePipeline EnginePipeline{"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv"};
+            EngineDevice engineDevice{window2};
+            enginePipeline EnginePipeline{engineDevice, "shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv", enginePipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT)};
     };
 }
