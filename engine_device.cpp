@@ -5,6 +5,7 @@
 #include <iostream>
 #include <set>
 #include <unordered_set>
+#include <vulkan/vulkan.h>
 
 namespace engine {
 
@@ -47,7 +48,7 @@ void DestroyDebugUtilsMessengerEXT(
 }
 
 // class member functions
-EngineDevice::EngineDevice(window &window1) : window{window1} {
+EngineDevice::EngineDevice(window &Window) : Window(Window) {
   createInstance();
   setupDebugMessenger();
   createSurface();
@@ -193,7 +194,7 @@ void EngineDevice::createCommandPool() {
   }
 }
 
-void EngineDevice::createSurface() { window.createWindowSurface(instance, &surface_); }
+void EngineDevice::createSurface() { Window.createWindowSurface(instance, &surface_); }
 
 bool EngineDevice::isDeviceSuitable(VkPhysicalDevice device) {
   QueueFamilyIndices indices = findQueueFamilies(device);

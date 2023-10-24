@@ -93,7 +93,7 @@ class EngineDevice {
   VkInstance instance;
   VkDebugUtilsMessengerEXT debugMessenger;
   VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-  window &window;
+  window &Window;
   VkCommandPool commandPool;
 
   VkDevice device_;
